@@ -5,7 +5,7 @@ public class SingletoneLogic {
 
     private SingletoneLogic()
     {
-
+        System.out.println("Calling from Private constructor");
     }
     public static SingletoneLogic getInstance()
     {
