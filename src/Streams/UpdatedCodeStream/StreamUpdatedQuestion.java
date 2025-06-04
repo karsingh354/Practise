@@ -123,5 +123,12 @@ public class StreamUpdatedQuestion {
                 .map(String::valueOf).collect(Collectors.joining());
         System.out.println(string10);
 
+        //Find the Number of Repeated words in given String
+        String strList="My name is is";
+        String[] cStringValue=strList.split(" ");
+        Map<String,Long> map01=Arrays.stream(cStringValue).collect(Collectors.groupingBy(i->i,Collectors.counting()));
+        List<String> countList=map01.entrySet().stream().filter(i->i.getValue()>1).map(i->i.getValue()+"  "+i.getKey()).collect(Collectors.toList());
+        System.out.println(countList);
+
     }
 }
