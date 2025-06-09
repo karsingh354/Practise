@@ -130,5 +130,11 @@ public class StreamUpdatedQuestion {
         List<String> countList=map01.entrySet().stream().filter(i->i.getValue()>1).map(i->i.getValue()+"  "+i.getKey()).collect(Collectors.toList());
         System.out.println(countList);
 
+        //In given List if we found number with is divisible by 3 the sqaure that number and other number print as it is
+        int [] arrs={2,4,6,8,2,10,4,12,6};            // out put 2,4,36,8,2,10,4,144,36
+        System.out.println(Arrays.stream(arrs).map(i->i%3==0?i*i:i).boxed().collect(Collectors.toList()));
+       
+
+
     }
 }

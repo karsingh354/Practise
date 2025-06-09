@@ -2,7 +2,7 @@ package Streams.LeetCodeQuestion;
 
 import java.util.HashSet;
 import java.util.Set;
-//Find the length of Max sub String 
+//Find the length of Max sub String
 public class MaxSubString {
     public static void main(String[] args) {
         String s="acdcgdjcdgsfacdac";
