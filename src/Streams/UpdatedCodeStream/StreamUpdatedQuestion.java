@@ -133,6 +133,12 @@ public class StreamUpdatedQuestion {
         //In given List if we found number with is divisible by 3 the sqaure that number and other number print as it is
         int [] arrs={2,4,6,8,2,10,4,12,6};            // out put 2,4,36,8,2,10,4,144,36
         System.out.println(Arrays.stream(arrs).map(i->i%3==0?i*i:i).boxed().collect(Collectors.toList()));
+
+        //Find the common even number in Lists
+        List<Integer> lst1=Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+        List<Integer> lst2=Arrays.asList(1,2,3,4,6)	;
+        List<Integer> CommonList =Stream.concat(lst1.stream().filter(i->(i%2 == 0),lst2.stream().filter(i->(i%2)==0))).collect(Collectors.toList());
+         System.out.println(commonList);
        
 
 
