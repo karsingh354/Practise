@@ -55,6 +55,11 @@ public class StreamUpdatedQuestion {
         Collections.reverse(Arrays.asList(cString));
         System.out.println(Arrays.stream(cString).collect(Collectors.joining(" ")));
 
+        String revsreAtSamePlace="My name is kartik";
+        String[] resSamPlace=revsreAtSamePlace.split(" ");
+        String resRevString=Arrays.stream(resSamPlace).map(i-> new StringBuffer(i).reverse().toString()).collect(Collectors.joining(" "));
+        System.out.println(resRevString);  //out put:= yM eman si kitrak
+
         //Find the last three Number and Start Three Number
         List<Integer> list6=Arrays.asList(1,2,3,4,5,6,7,8,9,10);
         List<Integer> lastThreeNumber=list6.stream().skip(Math.max(1,list6.size()-3)).collect(Collectors.toList());
