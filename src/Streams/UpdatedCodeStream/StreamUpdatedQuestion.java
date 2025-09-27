@@ -16,7 +16,7 @@ public class StreamUpdatedQuestion {
                 .collect(Collectors.groupingBy(i->i, LinkedHashMap::new, Collectors.counting()));
          Character firstNonRepeatedCharacter=character1.entrySet().stream().filter(i->i.getValue()==1).findFirst().get().getKey();
          System.out.println(firstNonRepeatedCharacter);
-
+          
          //Find the Immediate lowest and highest value
         List<Integer> lst1= Arrays.asList(1,2,3,4,5,6,7,8,9,10);
                      int num=5;
@@ -144,7 +144,14 @@ public class StreamUpdatedQuestion {
         List<Integer> lst2=Arrays.asList(1,2,3,4,6)	;
         List<Integer> CommonList =Stream.concat(lst1.stream().filter(i->(i%2 == 0),lst2.stream().filter(i->(i%2)==0))).collect(Collectors.toList());
          System.out.println(commonList);
-       
+
+        
+        //Input:"karik","pune","india","banglore","singh" Output:"singh","pune","india","banglore","kartik"
+        List<String> lst=Arrays.asList("karik","pune","india","banglore","singh");
+                   String temp=lst.get(0);
+                   lst.set(0,lst.get(lst.size()-1));
+                   lst.set(lst.size()-1,temp);
+                   System.out.println(lst);
 
 
     }
