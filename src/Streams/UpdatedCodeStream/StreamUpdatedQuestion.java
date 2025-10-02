@@ -121,12 +121,14 @@ public class StreamUpdatedQuestion {
         System.out.println(groupAnagram);
 
         //Convert string into Toggle String
-        String string10="Kartik".chars()
-                .mapToObj(c->Character.isUpperCase(c)
-                        ?Character.toUpperCase((char)c)
-                        :Character.toUpperCase((char)c))
-                .map(String::valueOf).collect(Collectors.joining());
-        System.out.println(string10);
+        String string100 = "Kartik".chars()
+                .mapToObj(c -> Character.isUpperCase(c)
+                        ? Character.toLowerCase((char) c)   // if uppercase → make lowercase
+                        : Character.toUpperCase((char) c)) // if lowercase → make uppercase
+                .map(String::valueOf)
+                .collect(Collectors.joining());
+
+        System.out.println(string100);
 
         //Find the Number of Repeated words in given String
         String strList="My name is is";
