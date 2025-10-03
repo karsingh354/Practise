@@ -155,6 +155,11 @@ public class StreamUpdatedQuestion {
                    lst.set(lst.size()-1,temp);
                    System.out.println(lst);
 
+        
+         //Group of String according to their lenght
+        List<String> list500=Arrays.asList("Kartik",null," ","Singh");
+        Map<Integer,List<String>> groupAccording=list500.stream().filter(i->i!=null && !i.isBlank()).collect(Collectors.groupingBy(String::length));
+        System.out.println(groupAccording);
 
     }
 }
