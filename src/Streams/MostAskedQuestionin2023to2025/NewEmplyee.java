@@ -1,4 +1,4 @@
-
+package Streams.MostAskedQuestionin2023to2025;
 public class NewEmplyee {
     public String name;
     public int salary;
