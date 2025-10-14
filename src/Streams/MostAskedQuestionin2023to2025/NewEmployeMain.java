@@ -26,5 +26,10 @@ public class NewEmployeMain {
                              )));
         System.out.println(result);
 
+        //Find the Average salary in Dept
+        Map<String,Double> resValue=list.stream()
+                .collect(Collectors.groupingBy(Employee::getDept,Collectors.averagingDouble(Employee::getSalary)));
+        System.out.println(resValue);
+
     }
 }
