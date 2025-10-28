@@ -161,5 +161,11 @@ public class StreamUpdatedQuestion {
         Map<Integer,List<String>> groupAccording=list500.stream().filter(i->i!=null && !i.isBlank()).collect(Collectors.groupingBy(String::length));
         System.out.println(groupAccording);
 
+        //Find the count of Vowel in String 
+         List<String> lst= Arrays.asList("Kartik","Singh");
+        Map<String,Long> countVowel=lst.stream().collect(Collectors.toMap(i->i, j->j.chars().mapToObj(k->(char)k)
+                       .filter(l->"aeiour".indexOf(l)!=-1).count()));
+        System.out.println(countVowel);
+
     }
 }
