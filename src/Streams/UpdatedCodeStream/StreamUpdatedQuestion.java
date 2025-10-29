@@ -167,5 +167,35 @@ public class StreamUpdatedQuestion {
                        .filter(l->"aeiour".indexOf(l)!=-1).count()));
         System.out.println(countVowel);
 
+        //======================================New code Added========================
+        //Make sepearte Digit and special Chararcter
+
+        String str = "Kartik@#$Singh12";
+        // Extract alphabets
+        String letters = str.chars()
+                .mapToObj(c -> (char) c)
+                .filter(Character::isLetter)
+                .map(String::valueOf)
+                .collect(Collectors.joining());
+
+        // Extract digits
+        String digits = str.chars()
+                .mapToObj(c -> (char) c)
+                .filter(Character::isDigit)
+                .map(String::valueOf)
+                .collect(Collectors.joining());
+
+        // Extract special characters
+        String specialChars = str.chars()
+                .mapToObj(c -> (char) c)
+                .filter(c -> !Character.isLetterOrDigit(c))
+                .map(String::valueOf)
+                .collect(Collectors.joining());
+
+        System.out.println("Letters: " + letters);         // KartikSingh
+        System.out.println("Digits: " + digits);           // 12
+        System.out.println("Special Characters: " + specialChars); // @#$
+        //======================================New Code Added========================
+
     }
 }
