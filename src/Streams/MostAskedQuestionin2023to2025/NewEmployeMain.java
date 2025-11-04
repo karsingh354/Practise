@@ -31,5 +31,12 @@ public class NewEmployeMain {
                 .collect(Collectors.groupingBy(Employee::getDept,Collectors.averagingDouble(Employee::getSalary)));
         System.out.println(resValue);
 
+        //Find the Average Max salary in Dept
+        Map<String,Double> resValue01=list.stream()
+                .collect(Collectors.groupingBy(Employee::getDept,Collectors.averagingDouble(Employee::getSalary)));
+		Map<String,Double> averageMaxDeptSalary=resValue.entrySet().stream().
+            max((o1,o2)->o1.getValue().compareTo(o2.getValue())).stream().collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue));
+        System.out.println(averageMaxDeptSalary);
+
     }
 }
