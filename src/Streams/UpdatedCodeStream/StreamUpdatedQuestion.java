@@ -200,7 +200,7 @@ public class StreamUpdatedQuestion {
         String[] arr = {"abc", "abcd", "ab", "afg", "adb"};
 
         Arrays.stream(arr).collect(Collectors.toMap(i -> i, j -> istruefalse(j)))
-                .forEach((k, v) -> System.out.println(k + "= " + v));
+                .entrySet().forEach(System.out::println);
 
     }
     public static boolean istruefalse(String s){
