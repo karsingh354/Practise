@@ -196,6 +196,17 @@ public class StreamUpdatedQuestion {
         System.out.println("Digits: " + digits);           // 12
         System.out.println("Special Characters: " + specialChars); // @#$
         //======================================New Code Added========================
+    //write a Java program that return false if the string is not in ascending order
+        String[] arr = {"abc", "abcd", "ab", "afg", "adb"};
 
+        Arrays.stream(arr).collect(Collectors.toMap(i -> i, j -> istruefalse(j)))
+                .forEach((k, v) -> System.out.println(k + "= " + v));
+
+    }
+    public static boolean istruefalse(String s){
+        char[]c=s.toCharArray();
+        Arrays.sort(c);
+        return s.equals(new String(c));
+    }
     }
 }
