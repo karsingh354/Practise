@@ -195,6 +195,15 @@ public class StreamUpdatedQuestion {
         System.out.println("Letters: " + letters);         // KartikSingh
         System.out.println("Digits: " + digits);           // 12
         System.out.println("Special Characters: " + specialChars); // @#$
+        //====================================================New Code Added===================================
+        //Find the max legth of word in given String
+        String str = "I love Microservice";
+        String [] revStr=str.split(" ");
+        Map<String,Integer> mapsValyues=Arrays.stream(revStr).collect(Collectors.toMap(i->i,i->i.length()));
+        System.out.println(mapsValyues);
+        String maximumLengthOfString=mapsValyues.entrySet().stream().max((o1,o2)->o1.getValue().compareTo(o2.getValue())).get().getKey();
+        System.out.println(maximumLengthOfString);
+        //=====================================================New Code Added==================================
         //======================================New Code Added========================
     //write a Java program that return false if the string is not in ascending order
         String[] arr = {"abc", "abcd", "ab", "afg", "adb"};
