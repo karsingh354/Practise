@@ -215,5 +215,13 @@ public class StreamUpdatedQuestion {
         Arrays.sort(c);
         return s.equals(new String(c));
     }
+    //New code added
+            //Print repeated chararcter only once(input:KartikSingh,output:KartikSngh)
+        String str7="KartikSingh";
+       Map<Character,Long> map7=str7.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(i->i,LinkedHashMap::new,Collectors.counting()));
+       String removeDuplicate= map7.entrySet().stream().map(i->i.getKey().toString())
+               .collect(Collectors.joining(""));
+        System.out.println(removeDuplicate);
+    //New code added
     }
 }
