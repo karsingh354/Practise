@@ -1,0 +1,105 @@
+//Find the Next Greater element
+public class NextGreaterElement {
+    public static void main(String[] args) {
+        int[] arst={1,2,3,7,5,44,56,7,8};
+        int[] result=new int[arst.length];
+        Stack<Integer> stack=new Stack<>();
+        for(int i=arst.length-1;i>=0;i--)
+        {
+          while (!stack.isEmpty()&&stack.peek()<arst[i]) //44<5
+          {
+            stack.pop();
+          }
+          result[i]=stack.isEmpty()?-1:stack.peek();
+          stack.push(arst[i]);
+        }
+        System.out.println(Arrays.toString(result));
+    }
+}
+//Target Sum
+public class TargetSum {
+    public static void main(String[] args) {
+        int[] arst={2,7,4,10};
+        int target=9;
+        Map<Integer,Integer> map=new HashMap<>();
+        for(int i=0;i<arst.length-1;i++)
+        {
+          map.put(arst[i],i);
+
+        }
+        for(int i=0;i<arst.length-1;i++)
+        {
+        int num=arst[i];
+        int remains=target-num;
+        if(map.containsKey(remains)&&map.get(remains)!=-i)
+        {
+            System.out.println(arst[i]+" "+i);
+        }
+        }
+    }
+}
+
+//Longest Non Repeated subString
+public class SubStringLongest {
+    public static void main(String[] args) {
+        String s="abcdfsfshahdgdfav";
+        int right=0;
+        int left=0;
+        int start=0;
+        int max=0;
+        Set<Character> seen=new HashSet<>();
+        while(right<s.length())
+        {
+         if(seen.add(s.charAt(right)))
+         {
+          if(right-left+1>max)
+          {
+           max=right-left+1;
+           start=left;
+          }
+          right++;
+         }
+         else{
+             seen.remove(s.charAt(left));
+             left++;
+         }
+        }
+        String subString=s.substring(start,start+max);
+        System.out.println(subString+" "+max);
+    }
+}
+//Find the Group of Anagram
+public class GroupOfAnagram {
+    public static void main(String[] args) {
+        List<String> list= Arrays.asList("cat","tac","tea","eat");
+        Collection<List<String>> groupOfAnagram= list.stream().collect(Collectors.groupingBy(i->{
+                            char[] chars=i.toCharArray();
+                            Arrays.sort(chars);
+                            return new String(chars);
+                        })).values();
+        System.out.println(groupOfAnagram);
+
+    }
+}
+
+//Sum Arrays Maximum Sum
+public class SumOfMaxSubArray {
+    public static int isChecking(int[] num)
+    {
+        int currentSum=0;
+        int maxSum=0;
+        for(int i=0;i<num.length-1;i++)
+        {
+         currentSum=Math.max(currentSum+num[i],num[i]);
+         maxSum=Math.max(currentSum,num[i]);
+        }
+        return maxSum;
+
+    }
+    public static void main(String[] args) {
+        int[] arst={1,2,3,4,10,-8};
+        System.out.print(isChecking(arst));
+    }
+}
+
+
