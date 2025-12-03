@@ -223,5 +223,12 @@ public class StreamUpdatedQuestion {
                .collect(Collectors.joining(""));
         System.out.println(removeDuplicate);
     //New code added
+    //new code added
+        //Find the sum of Integer inside String
+        String str8="Kartik123Singh";
+       Integer sumOfInteger=str8.chars().filter(Character::isDigit).map(i->i-'0').sum();
+        System.out.println(sumOfInteger);
+    //new Code added
+  
     }
 }
